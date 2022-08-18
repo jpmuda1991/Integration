@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Fragments.ProfileFragment">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        app:cardBackgroundColor="@color/light_brown"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back"
+        app:layout_constraintVertical_bias="0.07999998">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/name_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:text=""
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/flag_img"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:civ_border_color="@color/purple_500"
+                app:civ_border_width="@dimen/_2sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name_txt"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_img"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                app:civ_border_color="@color/purple_500"
+                app:civ_border_width="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="@id/flag_img"
+                app:layout_constraintStart_toEndOf="@id/flag_img"
+                app:layout_constraintTop_toTopOf="@id/flag_img"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nameTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Name: "
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/flag_img"
+                app:layout_constraintTop_toBottomOf="@+id/flag_img" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/name_txt_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text=""
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@id/nameTxtView"
+                app:layout_constraintEnd_toEndOf="@id/name_txt"
+                app:layout_constraintStart_toEndOf="@id/nameTxtView"
+                app:layout_constraintTop_toTopOf="@id/nameTxtView" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/countryTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Country: "
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/flag_img"
+                app:layout_constraintTop_toBottomOf="@+id/nameTxtView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/con_txt_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text=""
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@id/countryTxtView"
+                app:layout_constraintEnd_toEndOf="@id/name_txt"
+                app:layout_constraintStart_toEndOf="@id/countryTxtView"
+                app:layout_constraintTop_toTopOf="@id/countryTxtView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/ageTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Age: "
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/flag_img"
+                app:layout_constraintTop_toBottomOf="@+id/countryTxtView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/age_txt_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text=""
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@id/ageTxtView"
+                app:layout_constraintEnd_toEndOf="@id/name_txt"
+                app:layout_constraintStart_toEndOf="@id/ageTxtView"
+                app:layout_constraintTop_toTopOf="@id/ageTxtView" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dobTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Date of birth: "
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/flag_img"
+                app:layout_constraintTop_toBottomOf="@+id/ageTxtView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dob_txt_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text=""
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@id/dobTxtView"
+                app:layout_constraintEnd_toEndOf="@id/name_txt"
+                app:layout_constraintStart_toEndOf="@id/dobTxtView"
+                app:layout_constraintTop_toTopOf="@id/dobTxtView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/heightTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Height: "
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/flag_img"
+                app:layout_constraintTop_toBottomOf="@+id/dobTxtView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/height_txt_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text=""
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@id/heightTxtView"
+                app:layout_constraintEnd_toEndOf="@id/name_txt"
+                app:layout_constraintStart_toEndOf="@id/heightTxtView"
+                app:layout_constraintTop_toTopOf="@id/heightTxtView" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/weightTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Weight: "
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/flag_img"
+                app:layout_constraintTop_toBottomOf="@+id/heightTxtView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/weight_txt_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text=""
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@id/weightTxtView"
+                app:layout_constraintEnd_toEndOf="@id/name_txt"
+                app:layout_constraintStart_toEndOf="@id/weightTxtView"
+                app:layout_constraintTop_toTopOf="@id/weightTxtView" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

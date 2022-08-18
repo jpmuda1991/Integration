@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/scrollView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    tools:context=".Fragments.PlayersFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_two"
+        >
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_lyt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_margin="@dimen/_8sdp"
+            android:hint="Enter player name..."
+            android:textColorHint="@color/light_grey"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pl_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:inputType="textPersonName|textMultiLine"
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/gender_grp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@+id/search_lyt"
+            app:layout_constraintStart_toStartOf="@+id/search_lyt"
+            app:layout_constraintTop_toBottomOf="@+id/search_lyt">
+
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/m_rBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="men"
+                android:textColor="@color/white"
+                app:buttonTint="@color/purple_500"
+                />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/w_rBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="women"
+                android:textColor="@color/white"
+                app:buttonTint="@color/purple_500"
+                />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/b_rBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="both"
+                android:textColor="@color/white"
+                app:buttonTint="@color/purple_500"
+
+                />
+
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/country_lyt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:endIconMode="dropdown_menu"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            app:layout_constraintEnd_toStartOf="@id/enter_btn"
+            app:layout_constraintStart_toStartOf="@+id/search_lyt"
+            app:layout_constraintTop_toBottomOf="@+id/gender_grp">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/country_autocomplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:inputType="textPersonName|textMultiLine"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/enter_btn"
+            android:background="@drawable/btn_dsg"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:text="Enter"
+            android:textAllCaps="false"
+            android:fontFamily="@font/sport"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/white"
+            android:padding="@dimen/_2sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/country_lyt"
+            app:layout_constraintEnd_toEndOf="@+id/search_lyt"
+            app:layout_constraintTop_toTopOf="@+id/country_lyt" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/s_pRView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enter_btn"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+

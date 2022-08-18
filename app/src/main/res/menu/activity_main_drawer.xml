@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_rankings"
+            android:icon="@drawable/ranking"
+            android:title="Rankings" />
+        <item
+            android:id="@+id/nav_players"
+            android:icon="@drawable/player"
+            android:title="Players" />
+
+        <item
+            android:id="@+id/nav_tournaments"
+            android:icon="@drawable/tournament"
+            android:title="Tournaments" />
+    </group>
+</menu>

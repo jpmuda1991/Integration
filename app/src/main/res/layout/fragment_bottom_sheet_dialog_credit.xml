@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/payment_method_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/sport"
+            android:text="Credit card"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <RadioGroup
+            android:id="@+id/payment_grp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:layout_marginEnd="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/payment_method_txt"
+            app:layout_constraintStart_toStartOf="@id/back"
+            >
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/visa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:buttonTint="@color/purple_500"
+                android:text="Visa" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/master"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:buttonTint="@color/purple_500"
+                android:text="Master Card" />
+
+        </RadioGroup>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/c_card_lyt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
+            android:hint="credit card number"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/payment_grp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textSize="@dimen/_13ssp"
+                android:maxLength="12"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/expiration_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="expiration"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/c_card_lyt"
+            app:layout_constraintTop_toBottomOf="@+id/c_card_lyt" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mm_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="mm"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toTopOf="@id/mm_lyt"
+            app:layout_constraintEnd_toEndOf="@id/mm_lyt"
+            app:layout_constraintStart_toStartOf="@+id/mm_lyt" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mm_lyt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:errorEnabled="true"
+            app:layout_constraintStart_toEndOf="@id/expiration_txt"
+            app:layout_constraintBottom_toBottomOf="@id/expiration_txt"
+            app:layout_constraintTop_toTopOf="@id/expiration_txt">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/month"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="@dimen/_13ssp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/yy_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="yy"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toTopOf="@id/yy_lyt"
+            app:layout_constraintEnd_toEndOf="@id/yy_lyt"
+            app:layout_constraintStart_toStartOf="@+id/yy_lyt" />
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/yy_lyt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/mm_lyt"
+            app:layout_constraintBottom_toBottomOf="@id/expiration_txt"
+            app:layout_constraintTop_toTopOf="@id/expiration_txt">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="@dimen/_13ssp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cvv_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CVV"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/c_card_lyt"
+            app:layout_constraintTop_toBottomOf="@+id/mm_lyt" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cvv_lyt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@id/cvv_txt"
+            app:layout_constraintBottom_toBottomOf="@id/cvv_txt"
+            app:layout_constraintTop_toTopOf="@id/cvv_txt">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cvv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textSize="@dimen/_13ssp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name_lyt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
+            android:hint="full name"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@id/c_card_lyt"
+            app:layout_constraintStart_toStartOf="@id/c_card_lyt"
+            app:layout_constraintTop_toBottomOf="@+id/cvv_lyt">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/full_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/_13ssp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/address_lyt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
+            android:hint="address"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@id/c_card_lyt"
+            app:layout_constraintStart_toStartOf="@id/c_card_lyt"
+            app:layout_constraintTop_toBottomOf="@+id/name_lyt">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/_13ssp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/btn_dsg"
+            android:padding="@dimen/_10sdp"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/address_lyt"
+            app:layout_constraintStart_toStartOf="@+id/address_lyt"
+            app:layout_constraintTop_toBottomOf="@+id/address_lyt"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/payment_method_txt"
+            app:layout_constraintTop_toTopOf="@+id/payment_method_txt"
+            app:srcCompat="@drawable/ic_back" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

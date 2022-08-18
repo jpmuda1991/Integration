@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_rankings">
+
+
+    <fragment
+        android:id="@+id/nav_rankings"
+        android:name="com.tennis.cli.tenn.cus.tennisapp.Fragments.RankingFragment"
+        android:label="Top Rankings"
+        tools:layout="@layout/fragment_ranking" >
+        <action
+            android:id="@+id/action_nav_rankings_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_nav_rankings_to_sameCtyPlayersFragment2"
+            app:destination="@id/sameCtyPlayersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_players"
+        android:name="com.tennis.cli.tenn.cus.tennisapp.Fragments.PlayersFragment"
+        android:label="Players"
+        tools:layout="@layout/fragment_players" >
+        <action
+            android:id="@+id/action_nav_players_to_sameCtyPlayersFragment"
+            app:destination="@id/sameCtyPlayersFragment" />
+        <action
+            android:id="@+id/action_nav_players_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_tournaments"
+        android:name="com.tennis.cli.tenn.cus.tennisapp.Fragments.TournamentFragment"
+        android:label="Tournaments"
+        tools:layout="@layout/fragment_tournament" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.tennis.cli.tenn.cus.tennisapp.Fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_nav_rankings"
+            app:destination="@id/nav_rankings" />
+        <action
+            android:id="@+id/action_profileFragment_to_sameCtyPlayersFragment"
+            app:destination="@id/sameCtyPlayersFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_nav_players"
+            app:destination="@id/nav_players" />
+    </fragment>
+    <fragment
+        android:id="@+id/sameCtyPlayersFragment"
+        android:name="com.tennis.cli.tenn.cus.tennisapp.Fragments.SameCtyPlayersFragment"
+        android:label="fragment_same_cty_players"
+        tools:layout="@layout/fragment_same_cty_players" >
+        <action
+            android:id="@+id/action_sameCtyPlayersFragment_to_nav_rankings"
+            app:destination="@id/nav_rankings" />
+        <action
+            android:id="@+id/action_sameCtyPlayersFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_sameCtyPlayersFragment_to_nav_players"
+            app:destination="@id/nav_players" />
+    </fragment>
+
+</navigation>
